@@ -10,12 +10,13 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vue": "^3.4.0",
-    "vue-router": "^4.2.5",
+    "axios": "^1.6.2",
     "pinia": "^2.1.7",
-    "axios": "^1.6.2"
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@types/node": "^25.3.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
