@@ -6,7 +6,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { userApi } from '@/api'
-import type { User, UserProfile } from '@/types'
+import type { User, } from '@/types'
 
 export const useUserStore = defineStore('user', () => {
   const currentUser = ref<User | null>(null)
@@ -14,18 +14,18 @@ export const useUserStore = defineStore('user', () => {
   const permissions = ref<string[]>([])
 
   const isAuthenticated = computed<boolean>(() => !!token.value && !!currentUser.value)
-  
+
   const userRole = computed<string>(() => currentUser.value?.role || 'guest')
-  
+
   const userName = computed<string>(() => currentUser.value?.username || 'Anonymous')
 
   async function login(username: string, password: string): Promise<void> {
     try {
       const response = await userApi.login(username, password)
-      
+
       token.value = response.token
       currentUser.value = response.user as User
-      
+
       localStorage.setItem('token', response.token)
       localStorage.setItem('user', JSON.stringify(response.user))
     } catch (error) {
@@ -38,7 +38,7 @@ export const useUserStore = defineStore('user', () => {
     currentUser.value = null
     token.value = null
     permissions.value = []
-    
+
     localStorage.removeItem('token')
     localStorage.removeItem('user')
   }

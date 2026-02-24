@@ -7,7 +7,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } f
 import type { ApiResponse } from '@/types'
 
 class HttpClient {
-  private instance: AxiosInstance
+  private readonly instance: AxiosInstance
 
   constructor(baseURL: string, timeout: number = 10000) {
     this.instance = axios.create({

@@ -3,7 +3,7 @@
  * 目的：为 Pinia Store 提供严格的类型约束
  */
 
-import type { User, UserRole } from './user'
+import type { User, } from './user'
 
 export interface UserState {
   currentUser: User | null

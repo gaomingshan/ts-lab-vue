@@ -23,7 +23,7 @@ const routes: AppRouteRecordRaw[] = [
     component: () => import('@/views/UserList.vue'),
     meta: {
       title: '用户列表',
-      requiresAuth: true,
+      requiresAuth: false,
       roles: ['admin', 'user']
     }
   },

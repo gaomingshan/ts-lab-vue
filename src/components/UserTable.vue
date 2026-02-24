@@ -5,7 +5,7 @@
  */
 
 import { computed } from 'vue'
-import type { User, UserListItem } from '@/types'
+import type { UserListItem } from '@/types'
 
 interface Props {
   users: UserListItem[]
